@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Espejo 💖</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #fff0f5; /* Light pink background */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(255, 182, 193, 0.5); /* Pink shadow */
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            border: 2px solid #ffb6c1;
+        }
+
+        h2 { 
+            color: #ff69b4; 
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        p.subtitle {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background: #fffafa;
+            border: 1px solid #ffb6c1;
+            color: #333;
+            border-radius: 8px;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #ff1493;
+            box-shadow: 0 0 5px rgba(255, 20, 147, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: 0.3s;
+            letter-spacing: 1px;
+        }
+
+        button:hover { 
+            background: #ff1493; 
+            transform: translateY(-2px);
+        }
+
+        .links { 
+            margin-top: 20px; 
+            font-size: 14px; 
+            color: #666;
+        }
+        
+        .links a { 
+            color: #ff1493; 
+            text-decoration: none; 
+            font-weight: bold;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<main class="login-container">
+    <h2>WELCOME BACK</h2>
+    <p class="subtitle">Please enter your details to login</p>
+    
+    <form id="loginForm">
+        <input type="email" placeholder="Email Address" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">LOGIN</button>
+    </form>
+    
+    <div class="links">
+        <p>New to Espejo? <a href="Register_P.html">Sign up Here</a></p>
+        <p><a href="index.html.html">← Back to Shop</a></p>
+    </div>
+</main>
+
+<script>
+    document.getElementById('loginForm').onsubmit = (e) => {
+        e.preventDefault();
+        alert("Login Successful! Welcome back to Espejo. 💖");
+        window.location.href = "index.html"; 
+    };
+</script>
+
+</body>
+</html>
