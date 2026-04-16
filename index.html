@@ -194,9 +194,9 @@ text-align:center;
 </div>
 
 <div class="nav-right">
-<a href="#">Login</a>
-<a href="#">Register</a>
-<span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    <a href="Login_P.html">Login</a>
+    <a href="Register_P.html">Register</a> 
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
 </div>
 
 </header>
@@ -274,7 +274,7 @@ Shop Now
 
 
 <div class="card handbag">
-<img src="Handbag_1.jpg">
+<img src="business img/Handbag 1.jpg">
 <h3>Brown Handbag</h3>
 <p>₱499</p>
 <button onclick="buy()">Buy</button>
@@ -288,21 +288,21 @@ Shop Now
 </div>
 
 <div class="card handbag">
-<img src="handbag 3.jpg">
+<img src="business img/Handbag 3.jpg">
 <h3>Umber Brown Handbag</h3>
 <p>₱499</p>
 <button onclick="buy()">Buy</button>
 </div>
 
 <div class="card handbag">
-<img src="handbag 4.jpg">
+<img src="business img/Handbag 4.jpg">
 <h3>Holy Black Handbag</h3>
 <p>₱499</p>
 <button onclick="buy()">Buy</button>
 </div>
 
 <div class="card handbag">
-<img src="handbag 5.jpg">
+<img src="business img/Handbag 5.jpg">
 <h3>Gothic Y2k Handbag</h3>
 <p>₱499</p>
 <button onclick="buy()">Buy</button>
@@ -319,6 +319,8 @@ Shop Now
 <p>Email: Espejo@gmail.com</p>
 <p>Phone: 09123456789</p>
 </section>
+
+
 
 <footer>
 <p>© 2026 Espejo</p>
@@ -366,7 +368,18 @@ window.scrollY>200?"block":"none";
 function topFunction(){
 window.scrollTo({top:0,behavior:'smooth'});
 }
+
+// Function to show the pop-up
+function openModal(id) {
+    document.getElementById(id).style.display = "block";
+}
+
+// Function to hide the pop-up
+function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+}
 </script>
+
 
 </body>
 </html>
