@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espejo</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Arial;
+background:#fff0f5;
+color:#333;
+overflow-x:hidden;
+scroll-behavior:smooth;
+padding-top:70px;
+}
+
+/* LOADER */
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:white;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:2000;
+font-size:30px;
+color:#ff69b4;
+}
+
+/* NAVBAR */
+header{
+position:fixed;
+top:0;
+width:100%;
+background:#ffb6c1;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px 30px;
+z-index:1000;
+}
+
+/* LOGO IMAGE */
+.logo{
+height:45px;
+width:auto;
+object-fit:contain;
+}
+
+/* NAV */
+.nav-left,.nav-right{
+display:flex;
+align-items:center;
+}
+
+.nav-left a,.nav-right a{
+color:white;
+margin:0 10px;
+text-decoration:none;
+}
+
+/* MOBILE */
+.menu-toggle{
+display:none;
+font-size:25px;
+cursor:pointer;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:url('https://images.unsplash.com/photo-1591561954557-26941169b49e') center/cover;
+color:white;
+}
+
+.hero h1{
+font-size:45px;
+}
+
+button{
+margin-top:10px;
+padding:10px 20px;
+background:#ff69b4;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff1493;
+}
+
+/* SECTIONS */
+section{
+padding:60px 10%;
+}
+
+/* PRODUCTS */
+.products{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:15px;
+border-radius:10px;
+text-align:center;
+opacity:0;
+transform:translateY(20px);
+transition:0.5s;
+}
+
+.card.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.card:hover{
+transform:scale(1.05);
+box-shadow:0 0 15px pink;
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+
+/* TOP BUTTON */
+#topBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+display:none;
+background:#ff69b4;
+}
+
+/* FOOTER */
+footer{
+background:#ffb6c1;
+text-align:center;
+padding:20px;
+color:white;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.nav-left a{display:none}
+.menu-toggle{display:block}
+.nav-left.active a{
+display:block;
+margin:10px 0;
+}
+.nav-left{
+flex-direction:column;
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+background:#ffb6c1;
+text-align:center;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div id="loader">Espejo 💖</div>
+
+<header>
+
+<!-- LOGO CLICKABLE -->
+<div class="nav-left" id="navMenu">
+<a href="#home">
+<img src="business img/Espejo Logo.png" class="logo">
+</a>
+
+<a href="#home">Home</a>
+<a href="#products">Shop</a>
+<a href="#contact">Contact</a>
+</div>
+
+<div class="nav-right">
+<a href="#">Login</a>
+<a href="#">Register</a>
+<span class="menu-toggle" onclick="toggleMenu()">☰</span>
+</div>
+
+</header>
+
+<!-- HERO -->
+<div class="hero" id="home">
+<h1>Elegant Bags for Every Style</h1>
+<p>Simple. Stylish. You.</p>
+<button onclick="document.getElementById('products').scrollIntoView()">
+Shop Now
+</button>
+</div>
+
+<!-- WHY -->
+<section>
+<h2 style="text-align:center">Why Choose Us?</h2>
+<div class="products">
+<div class="card"><h3>💖 Cute Designs</h3><p>Perfect for any outfit</p></div>
+<div class="card"><h3>✨ Quality</h3><p>Strong and long-lasting</p></div>
+<div class="card"><h3>👜 Affordable</h3><p>Style without spending too much</p></div>
+</div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+<h2 style="text-align:center">Our Bags</h2>
+
+<div style="text-align:center;margin-bottom:20px;">
+<button onclick="filter('all')">All</button>
+<button onclick="filter('handbag')">Handbags</button>
+<button onclick="filter('tote')">Tote Bags</button>
+</div>
+
+<div class="products">
+
+
+
+
+
+<div class="card tote">
+<img src="business img/Tote 1.jpg">
+<h3>Brown Lace Tote Bag</h3>
+<p>₱699</p>
+<button onclick="buy()">Buy</button>
+</div>
+
+<div class="card tote">
+<img src="business img/Tote 2.jpg">
+<h3>Plain White Tote Bag</h3>
+<p>₱699</p>
+<button onclick="buy()">Buy</button>
+</div>
+
+<div class="card tote">
+<img src="business img/Tote 3.jpg">
+<h3>Dark Green Lace Tote Bag</h3>
+<p>₱699</p>
+<button onclick="buy()">Buy</button>
+</div>
+
+<div class="card tote">
+<img src="business img/Tote 4.jpg">
+<h3>Navy Blue Lace Tote Bag</h3>
+<p>₱699</p>
+<button onclick="buy()">Buy</button>
+</div>
+
+<div class="card tote">
+<img src="business img/Tote 5.jpg">
+<h3>Light Green Tote Bag</h3>
+<p>₱699</p>
+<button onclick="buy()">Buy</button>
+</div>
+
+
+
+<div class="card handbag">
+<img src="business img/Handbag 1.jpg">
+<h3>Brown Handbag</h3>
+<p>₱499</p>
+<button onclick="buy()">Buy</button>
+</div>
+
+<div class="card handbag">
+<img src="business img/Handbag 2.jpg">
+<h3>Mahogany Brown Handbag</h3>
+<p>₱499</p>
+<button onclick="buy()">Buy</button>
+</div>
+
+<div class="card handbag">
+<img src="business img/Handbag 3.jpg">
+<h3>Umber Brown Handbag</h3>
+<p>₱499</p>
+<button onclick="buy()">Buy</button>
+</div>
+
+<div class="card handbag">
+<img src="business img/Handbag 4.jpg">
+<h3>Holy Black Handbag</h3>
+<p>₱499</p>
+<button onclick="buy()">Buy</button>
+</div>
+
+<div class="card handbag">
+<img src="business img/Handbag 5.jpg">
+<h3>Gothic Y2k Handbag</h3>
+<p>₱499</p>
+<button onclick="buy()">Buy</button>
+</div>
+
+
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact Us</h2>
+<p>Email: Espejo@gmail.com</p>
+<p>Phone: 09123456789</p>
+</section>
+
+<footer>
+<p>© 2026 Espejo</p>
+<p>Developed by Paula Espejo</p>
+</footer>
+
+<!-- TOP BUTTON -->
+<button onclick="topFunction()" id="topBtn">↑</button>
+
+<script>
+// LOADER
+window.onload = () => document.getElementById("loader").style.display = "none";
+
+// MENU
+function toggleMenu(){
+document.getElementById('navMenu').classList.toggle('active');
+}
+
+// FILTER
+function filter(type){
+document.querySelectorAll('.card').forEach(item=>{
+item.style.display = (type==='all'||item.classList.contains(type))?'block':'none';
+});
+}
+
+// BUY
+function buy(){
+alert("Thank you for your order! 💖");
+}
+
+// SCROLL ANIMATION
+const observer = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting) entry.target.classList.add('show');
+});
+});
+document.querySelectorAll('.card').forEach(el=>observer.observe(el));
+
+// TOP BUTTON
+window.onscroll = ()=>{
+document.getElementById("topBtn").style.display =
+window.scrollY>200?"block":"none";
+};
+
+function topFunction(){
+window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>
